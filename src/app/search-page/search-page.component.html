@@ -1,0 +1,47 @@
+
+  <div>
+    <h2  [ngStyle]="{'color':'red','text-align':'center','text-shadow':'3px  4px 5px  red'}">TASK TRACKING SYSTEM</h2>
+  </div>
+  <hr>
+  <br>
+  
+    <nav class="navbar">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText"
+       autocomplete="off" autofocus placeholder="&#61442;  Start searching by   id or taskname or status"> 
+    </nav>
+    <div class="panel panel-primary" >
+      <div class="panel-heading" >
+        <h2 [ngStyle]="{'color':'palevioletred','text-align':'center','text-shadow':'3px  4px 5px  palevioletred'}">Task List</h2>
+      </div>
+      <div class="panel-body">
+        <table class="table table-striped" >
+          <thead >
+              <tr>
+                <th>TaskId</th>
+                <th>TaskName</th>
+               <th>owner_Id</th>
+                <th>status</th>
+                <th>priority</th>
+                <th>Notes</th>
+                <th>isBookmarked</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let pro of tasdata  |async |filter:searchText | paginate :{itemsPerPage:4,currentPage:p }">
+               <td >{{pro.task_Id}}</td>
+               <td>{{pro.name}}</td>
+              <td>{{pro.owner_Id}}</td>
+               <td>{{pro.status}}</td>
+               <td>{{pro.priority}}</td>
+               <td>{{pro.notes}}</td>
+               <td>{{pro.isBookmarked}}</td>
+              
+                </tr>
+            </tbody>
+            <pagination-controls   (pageChange)="p=$event"></pagination-controls>
+          </table>
+        </div>
+      </div>
+      <div><button (click)="list()"  class ="btn btn-primary" [ngStyle]="{'backgroundColor':'#D7A9E3FF','color':'white'}">Home</button></div>
+  

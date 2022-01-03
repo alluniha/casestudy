@@ -1,0 +1,43 @@
+
+<div class="panel panel-primary" >
+    <div class="panel-heading" >
+      <h2 [ngStyle]="{'text-align':'center','color':'red'}">Task Details</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped" [ngStyle]="{'text-align':'center','backgroundColor':'silver'}">
+        <thead>
+          <tr>
+            <th>task_Id</th><br>
+            <th>owner_Id</th><br>
+            <th>creator_Id</th> <br>
+            <th>name</th><br>
+            <th>description</th><br>
+            <th>status</th> <br>
+            <th>priority</th><br>
+            <th>notes</th><br>
+            <th>isBookmarked</th><br>     
+            <th>created_On</th>   <br>
+            <th>statusChanged_On</th> <br>         
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngIf="tasdata">
+           <td>{{tasdata.task_Id}}</td><br>
+           <td>{{tasdata.owner_Id}}</td><br>
+           <td>{{tasdata.creator_Id}}</td><br>
+           <td>{{tasdata.name}}</td><br>
+           <td>{{tasdata.description}}</td><br>
+           <td>{{tasdata.status}}</td><br>
+           <td>{{tasdata.priority}}</td><br>
+           <td>{{tasdata.notes}}</td><br>
+           <td>{{tasdata.isBookmarked}}</td><br>
+           <td>{{tasdata.created_On}}</td><br>
+           <td>{{tasdata.statusChanged_On}}</td><br>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+    <br>
+    <div><button (click)="list()" class ="btn btn-primary" >Back to  List</button></div>
+
+  </div>

@@ -1,0 +1,36 @@
+<div><button (click)="list()" class="btn btn-primary" [ngStyle]="{'backgroundColor':'magenta','color':'white'}">Home</button></div>
+
+    <div>
+      <h2
+        [ngStyle]="{'color':'blue','text-align':'center','text-shadow':'3px  4px 5px  red'}">
+        Task Details</h2>
+    </div>
+<div >
+  
+  <div class="panel-body">
+    <form (ngSubmit)="onSubmit()" [ngStyle]="{'color':'white'}">
+      <table class="table table-striped">
+
+        <tr>
+          <th><label for="taskid">Task_ID:</label></th>
+          <td><input type="number" class="form-control" id="taskid" required [(ngModel)]="tasdata.task_Id"
+              name="taskid"></td>
+        </tr>
+       
+        <tr>
+          <th> <label for="isbookmarked">isbookmarked:</label></th>
+          <td><select class="form-control" required [(ngModel)]="tasdata.isBookmarked" name="isbookmarked">
+              <option value=true>true</option>
+              <option value=false>false</option>
+            </select></td>
+        </tr>
+        
+        <tr>
+          <th><button type="submit" class="btn btn-success"
+              [ngStyle]="{'backgroundColor':'green','color':'white'}">Submit</button></th>
+        </tr>
+
+      </table>
+    </form>
+  </div>
+</div>

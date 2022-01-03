@@ -1,0 +1,86 @@
+<div><button (click)="list()" class="btn btn-primary" [ngStyle]="{'backgroundColor':'magenta','color':'white'}">Back to
+    List</button></div>
+
+    <div>
+      <h2
+        [ngStyle]="{'color':'blue','text-align':'center','text-shadow':'3px  4px 5px  red'}">
+        Task Details</h2>
+    </div>
+<div style="background-image: url('./assets/img1.jpg');background-repeat: no-repeat;background-attachment: fixed;background-size:cover;">
+  
+  <div class="panel-body">
+    <form (ngSubmit)="onSubmit()" [ngStyle]="{'color':'white'}">
+      <table class="table table-striped">
+
+        <tr>
+          <th><label for="taskid">Task_ID:</label></th>
+          <td><input type="number" class="form-control" id="taskid" required [(ngModel)]="tasdata.task_Id"
+              name="taskid"></td>
+        </tr>
+        <tr>
+          <th><label for="ownerId">OwnerId:</label></th>
+          <td><input type="number" class="form-control" id="ownerId" required [(ngModel)]="tasdata.owner_Id"
+              name="ownerId"></td>
+        </tr>
+        <tr>
+          <th><label for="creatorid">Creator_ID:</label></th>
+          <td><input type="number" class="form-control" id="creatorid" required [(ngModel)]="tasdata.creator_Id"
+              name="creatorid"></td>
+        </tr>
+        <tr>
+          <th><label for="taskName">Task Name:</label></th>
+          <td><input type="text" class="form-control" id="taskName" required [(ngModel)]="tasdata.name" name="taskName">
+          </td>
+        </tr>
+        <tr>
+          <th><label for="description">Description:</label></th>
+          <td><input type="text" class="form-control" id="description" required [(ngModel)]="tasdata.description"
+              name="description"></td>
+        </tr>
+        <tr>
+          <th><label for="Status">Status:</label></th>
+          <td><select class="form-control" required [(ngModel)]="tasdata.status" name="Status">
+              <option value="Close">Close</option>
+              <option value="InProgress">InProgress</option>
+              <option value="Cancelled">Cancelled</option>
+              <option value="OnHold">OnHold</option>
+            </select></td>
+        </tr>
+        <tr>
+          <th><label for="priority">Priority:</label></th>
+          <td><select class="form-control" required [(ngModel)]="tasdata.priority" name="priority">
+              <option value="High">High</option>
+              <option value="Medium">Medium</option>
+              <option value="Low">Low</option>
+            </select></td>
+        </tr>
+        <tr>
+          <th><label for="notes">Notes:</label></th>
+          <td><input type="text" class="form-control" id="notes" required [(ngModel)]="tasdata.notes" name="notes"></td>
+        </tr>
+        <tr>
+          <th> <label for="isbookmarked">isbookmarked:</label></th>
+          <td><select class="form-control" required [(ngModel)]="tasdata.isBookmarked" name="isbookmarked">
+              <option value=true>true</option>
+              <option value=false>false</option>
+            </select></td>
+        </tr>
+        <tr>
+          <th><label for="createdon">created_On:</label></th>
+          <td><input type="date" class="form-control" id="createdon" required [(ngModel)]="tasdata.created_On"
+              name="createdon"></td>
+        </tr>
+        <tr>
+          <th><label for="statuschangedon">statuschangedon:</label></th>
+          <td><input type="datetime-local" class="form-control" id="statuschangedon" required
+              [(ngModel)]="tasdata.statusChanged_On" name="statuschangedon"></td>
+        </tr>
+        <tr>
+          <th><button type="submit" class="btn btn-success"
+              [ngStyle]="{'backgroundColor':'green','color':'white'}">Submit</button></th>
+        </tr>
+
+      </table>
+    </form>
+  </div>
+</div>

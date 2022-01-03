@@ -1,0 +1,45 @@
+
+<nav>
+  <div class="container-fluid">
+    <!-- Links -->
+  <ul class="nav navbar-nav">
+    <li class="nav-item">
+        <a (click) ="list()"  class="nav-link" routerLinkActive="active">Tasks List</a>
+    </li><br/>
+    <li class="nav-item">
+      <a   (click)="list1()" class="nav-link" routerLinkActive="active">Add Task</a>
+  </li><br/>
+  <li class="nav-item">
+    <a   (click)="list3()" class="nav-link" routerLinkActive="active">Asign Task </a>
+</li><br/>
+
+</ul>
+<ul class="nav navbar-nav navbar-right ">
+  <li class="nav-item">
+      <a    (click)="list2()" routerLink="logout" class="nav-link" routerLinkActive="active">Logout</a>
+  </li>
+ 
+
+</ul>
+
+</div>
+</nav>
+
+<div class="container">
+  <br>
+  
+  <hr>  
+  <div class="card">
+    <div class="card-body">
+  <router-outlet></router-outlet>
+    </div>
+    
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+      
+  </div>
+</footer>
+

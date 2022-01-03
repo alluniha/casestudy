@@ -1,0 +1,73 @@
+
+<div><button (click)="list()" class ="btn btn-primary" [ngStyle]="{'backgroundColor':'#D7A9E3FF','color':'white'}">Home</button></div>
+<div>
+    <h1 [ngStyle]="{'text-align':'left'}">ADD TASK</h1>
+</div>
+<div >
+<form [formGroup]="form1" (ngSubmit)="onSubmit(form1.value)" [ngStyle]="{'text-align':'left'}" >
+
+    Task_ID:<input type="number" name="task_Id"
+    placeholder="taskid"formControlName="task_Id">
+    <br>
+    <br>
+    Owner_ID:<input type="number" name="owner_Id"
+    placeholder="ownerid"formControlName="owner_Id">
+    <br> <br>
+    Creator_ID:<input type="number" name="creator_Id"
+    placeholder="creatorid"formControlName="creator_Id">
+    <br> <br>
+    Name:<input type="text" name="name"
+    placeholder="name"formControlName="name">
+    <br> <br>
+
+    Description:<input type="text" name="description"
+    placeholder="description"formControlName="description">
+    <br> <br>
+    Status:<select name="status"
+     formControlName="status">
+
+        <option value="Close">Close</option>
+        <option value="InProgress">InProgress</option>
+        <option value="Cancelled">Cancelled</option>
+        <option value="OnHold">OnHold</option>
+    </select>
+    <br> <br>
+    Priority: <select name="priority"
+     formControlName="priority">
+
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+    </select>
+ 
+    <br> <br>
+    Notes:<input type="text" name="notes"
+    placeholder="notes"formControlName="notes">
+  
+    <br> <br>
+    isBookmarked:<select name="isBookmarked"
+     formControlName="isBookmarked">
+
+        <option value="True">True</option>
+        <option value="False">False</option>
+    </select>
+  
+    <br> <br>
+    Created_On:<input type="date" name="created_On"
+    placeholder="createdon"formControlName="created_On">
+
+    <br> <br>
+    Status_Changed_On:<input type="datetime-local" name="statusChanged_On"
+    placeholder="statuschangedon"formControlName="statusChanged_On">
+  
+    <br> <br>
+
+
+    <input type="submit"value="Submit" [disabled]="!form1.valid" [ngStyle]="{'backgroundColor':'blue','color':'white'}" />
+  &nbsp;
+    <input type="reset"value="Reset"  [ngStyle]="{'backgroundColor':'green','color':'white'}" />
+
+    
+</form>
+</div>
+

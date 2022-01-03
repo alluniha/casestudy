@@ -1,0 +1,40 @@
+
+
+  <div>
+    <h2  [ngStyle]="{'text-align':'left'}">ASSIGN TASK</h2>
+  </div>
+  <hr>
+  
+
+
+
+<div>
+  
+  <div class="panel-body">
+    <form (ngSubmit)="onSubmit()" [ngStyle]="{'color':'white'}">
+      <table>
+
+        <tr>
+          <th><label for="taskid">Task_ID:</label></th>
+          <td><input type="number" class="form-control" id="taskid" required [(ngModel)]="tasdata.task_Id"
+              name="taskid"></td>
+        </tr>
+        <tr>
+          <th><label for="ownerId">OwnerId:</label></th>
+          <td><input type="number" class="form-control" id="ownerId" required [(ngModel)]="tasdata.owner_Id"
+              name="ownerId"></td>
+        
+        
+          <th><button type="submit" class="btn btn-success"
+              [ngStyle]="{'backgroundColor':'green','color':'white'}">Submit</button></th>
+
+        </tr>
+
+
+
+      </table>
+    </form>
+  </div>
+</div>
+
+<div><button (click)="list()" class="btn btn-primary" [ngStyle]="{'backgroundColor':'magenta','color':'white'}">Home</button></div>

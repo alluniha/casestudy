@@ -1,0 +1,44 @@
+<div>
+    
+</div>
+<hr>
+
+<div>
+<div>
+    <h2  [ngStyle]="{'color':'blue','text-align':'center','text-shadow':'3px  4px 5px  red'}"></h2>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<form class="container" [formGroup]="form1" (ngSubmit)="onSubmit(form1.value)">
+    <div  class="form-group" [ngStyle]="{'color':'black'}" >
+    User-Email-Id :<input type="text" name="email"
+    placeholder="username@gmail.com" autofocus formControlName="email"><br/><br/>
+    
+    &nbsp;
+    Password :<input type="password" name="password"
+    placeholder="password"formControlName="password">
+</div>
+
+
+<div [ngStyle]="{'text-align':'left'}"  class="form-group">
+    <input type="submit"value="Login" [disabled]="!form1.valid" [ngStyle]="{'backgroundColor':'blue','color':'white'}" />
+</div>
+    
+</form>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
